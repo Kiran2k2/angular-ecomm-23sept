@@ -1,0 +1,36 @@
+
+<div class="body">
+  <div class="wrapper">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmitLogin(loginForm)">
+      <h2>Login</h2>
+        <div class="input-field">
+        <input type="text"  name="username" ngModel required  #username="ngModel">
+        <label>Enter Username</label>
+       
+      </div>
+      @if (username.touched && username.dirty && username.invalid) {
+        <small class="control-error"><i class="fa-sharp fa-solid fa-circle-exclamation"></i>Invalid email entered</small>
+      }
+      <div class="input-field"> 
+        <input type="password"  name="password"   minlength="3"  required ngModel #password="ngModel">
+        <label>Enter your password</label>
+        
+     
+      </div>
+      @if (password.touched && password.dirty && password.invalid) {
+        <p class="control-error"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i>Invalid password entered - must be atleast 6 character</p>
+      } 
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit">Log In</button>
+      <div class="register">
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+    </form>
+  </div>
+</div>

@@ -27,7 +27,7 @@ export class ProductsComponent implements OnInit {
   allProductsList(){
     this.apiProds.getAllProduct().subscribe(res=>{
       this.productList=res
-      console.log(res)
+      // console.log(res)
     })
   }
 

@@ -12,13 +12,22 @@ import { CartService } from '../../Services/cart.service';
 export class HeaderComponent implements OnInit{
 
 
- totalItem:number=0
+ totalItem:number= 0
  constructor(private cartService:CartService){
 
  }
 
 ngOnInit(): void {
-  
+ 
+//  this.cartService.getCartItem().subscribe((res:any)=>{
+//   this.totalItem= res.length
+//  })
+
+this.cartService.getCartItem().subscribe((res:any)=>{
+ this.totalItem=res.length;
+ console.log(res);
+
+})
 }
 
 

@@ -12,12 +12,27 @@ import { RouterLink } from '@angular/router';
 })
 export class CartComponent implements OnInit {
   public cart: any = [];
+  public grandTotal !:number
   constructor(private getCart:CartService){
 }
   ngOnInit(): void {
    this.cart= this.getCart.getCartItem()
-   console.log(this.cart);
+  //  console.log(this.cart);
+  // this.getCart.getProduct().subscribe(res=>{
+  //   this.cart=res;
+  //   this.grandTotal=this.getCart.totalPrice()
+  // })
   }
+
+
+
+
+
+
+
+
+
+
 
 removeProduct(productId:number){
   this.getCart.removeItemCart(productId)

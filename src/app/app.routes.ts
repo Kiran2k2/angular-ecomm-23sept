@@ -5,6 +5,9 @@ import { ProductsComponent } from './layouts/products/products.component';
 // import { LayoutsComponent } from './layouts/layouts.component';
 import { ProductComponent } from './layouts/product/product.component';
 import { CartComponent } from './layouts/cart/cart.component';
+import { CatagoriesComponent } from './layouts/catagories/catagories.component';
+import { MenDataComponent } from './layouts/catagories/men-data/men-data.component';
+import { ElectronicsComponent } from './layouts/catagories/electronics/electronics.component';
 
 export const routes: Routes = [{
     path:'',
@@ -30,8 +33,14 @@ export const routes: Routes = [{
  {
    path:'cartList',
    component:CartComponent
- }
-
+ },{
+   path:"productss/:catagory",
+   component:MenDataComponent
+ },
+{
+   path:'**',
+   component:ElectronicsComponent
+}
 
 
 ];

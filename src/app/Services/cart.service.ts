@@ -1,39 +1,68 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { CartItem, NEWCART } from '../Model/cart.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  
-  private cartItems:any=[]
+
+  private cartItems:NEWCART[]=[]
   public productLists=new BehaviorSubject<any>([]);
-
-
-
-
-
-
+  public cartTotalPrice=new BehaviorSubject<number>(0);
+  public cartTotalQuantity=new BehaviorSubject<number>(0);
 
   constructor(private httpService:HttpClient) { }
   getProduct(){
     return this.productLists.asObservable()
   }
+  getCartTotalPrice():Observable<number>{
+    return this.cartTotalPrice.asObservable()
+  }
+ 
+  getTotalCartQuantity():Observable<number>{
+    return this.cartTotalQuantity.asObservable()
+  }
 
 
-setProduct(product:any){
-  this.cartItems.push(...product);
-  this.productLists.next(product)
-}
 
 
-  addToCart(product:any){
+  addToCart(product:CartItem){
+//     this.cartItems.push(product)
+//     console.log(this.cartItems);
+// this.updateCartTotals()
+console.log(product);
+
+    const presentProduct=this.cartItems.findIndex((item)=>
+      item.id ===product.id)
+    console.log(presentProduct);
     
-  this.cartItems.push(product)
+    
+    if(presentProduct >=0){
+      console.log(this.cartItems);
+      
+    this.cartItems[presentProduct].quantity +=1;
+    this.cartItems=[...this.cartItems]
+    }
+    else{
+      // let {}
+      let obj ={
+       ...product,quantity:1
+      }
+    this.cartItems.push(obj)
+    
+    
+    }
+this.updateCartTotals()
   }
  getCartItem(){
   return this.cartItems
+ }
+
+ getCartItemNo(){
+   return this.cartItems.length
  }
 
  removeItemCart(productId:number){
@@ -53,14 +82,35 @@ setProduct(product:any){
    this.productLists.next(this.cartItems);
 
   }
+ 
 
+  totalPrice() :number{
+   
+    console.log(this.cartItems);
+    
+   return this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
 
-  totalPrice():number{
-    let grandTotal=0;
-    this.cartItems.map((a:any)=>{
-      grandTotal +=a.total
-    });
-    return grandTotal
+  
+    
+  }
+  private updateCartTotals() {
+    const totalQuantity = this.cartItems.reduce((total, item) => total + item.quantity, 0);
+    
+    const totalPrice = this.totalPrice();
+    
+    this.cartTotalQuantity.next(totalQuantity);
+    this.cartTotalPrice.next(totalPrice);
   }
 
+
+  
+
 }
+
+
+
+
+
+
+
+

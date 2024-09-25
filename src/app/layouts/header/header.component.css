@@ -18,7 +18,12 @@ a{
 }
 
 
-
+img{
+    background-color: rgba(231, 225, 225, 0.938);
+    height: 60px;
+    width: 150px;
+    color: white;
+}
 
 
 
@@ -69,14 +74,14 @@ a{
 } */
 
 .logoutBTn{
-    /* background:linear-gradient(#9a21e0,rgb(71, 63, 68),rgb(62, 7, 192)); */
+    background:wheat;
     /* color: white; */
     border: 0;
-    color: yellow;
+    color: rgb(19, 11, 11);
     
     width: 100px;
     height: 30px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 /* a .nav-link{

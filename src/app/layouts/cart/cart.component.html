@@ -36,10 +36,10 @@
                         </tr>
                         <tr>
                             <td colspan="4"></td>
-                            <td><button class="btn btn-danger">Empty Carts</button></td>
+                            <td><button class="btn btn-danger" (click)="emptyCart()">Empty Carts</button></td>
                             <td><button routerLink="/products" class="btn btn-primary">Shop more</button></td>
                             <td><button class="btn btn-success">Check out</button></td>
-                            <td><strong>Grand Total : ${{grandTotal}} </strong></td>
+                            <td><strong>Grand Total : ${{grandTotal }} </strong></td>
                         </tr>
                     </tbody>
                 </table>

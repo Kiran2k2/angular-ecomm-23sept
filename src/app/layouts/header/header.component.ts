@@ -18,18 +18,14 @@ export class HeaderComponent implements OnInit{
  }
 
 ngOnInit(): void {
+this.updateCartCout()
+  
  
-//  this.cartService.getCartItem().subscribe((res:any)=>{
-//   this.totalItem= res.length
-//  })
-
-this.cartService.getCartItem().subscribe((res:any)=>{
- this.totalItem=res.length;
- console.log(res);
-
-})
 }
-
+updateCartCout(){
+ this.totalItem=this.cartService.getCartItemNo()
+ console.log(this.totalItem);
+}
 
 
 

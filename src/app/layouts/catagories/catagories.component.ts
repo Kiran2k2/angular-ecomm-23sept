@@ -28,7 +28,7 @@ export class CatagoriesComponent implements OnInit
      
    }
  onViewCatagory(product:any){
-  // this.route.navigate(['product',product.catagory])
+  this.route.navigate(['product',product.catagory])
   // this.route.navigateByUrl("product/:catagory")
 
  }

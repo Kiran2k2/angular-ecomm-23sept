@@ -1,0 +1,41 @@
+<div class="card-table">
+    <div class="cart-product">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Sr.No</th>
+                    <!-- <th>Product Name</th> -->
+                    <th>UserName</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Phone</th>
+                    <!-- <th>Total</th>
+                    <th>Action</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userList ">
+                    
+                    <td>{{user.id}}</td>
+                   
+                    <td style="width: 12%;">{{user.username}}</td>
+
+                    <td style="width: 25%;">{{user.email}}</td>
+                    <th style="width: 12%;">{{user.password}}</th>
+                    <td style="width: 12%;">{{user.phone}}</td>
+                    <td style="width: 12%;"></td>
+                    <td>
+                        <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                    </td>   
+                </tr>
+                <!-- <tr>
+                    <td colspan="4"></td>
+                    <td><button class="btn btn-danger" >Empty Carts</button></td>
+                    <td><button routerLink="/products" class="btn btn-primary">Shop more</button></td>
+                    <td><button class="btn btn-success">Check out</button></td>
+                    <td><strong> </strong></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>

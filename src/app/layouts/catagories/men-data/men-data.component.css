@@ -12,6 +12,8 @@
 }
 h3{
     font-size: 1rem;
+    padding-bottom: 30px;
+    padding-left: 10px;
 }
 .card{
     display: flex;
@@ -27,13 +29,21 @@ h3{
     gap: 50px;
 }
  .body .card .imageBox{
-    border: 2px solid green;
+    /* border: 2px solid green; */
+    height: 200px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    overflow: hidden;
 }
 
 
 img{
-    height: 200px;
-    padding-left: 60px;
+    height: 65%;
+    width: 80%;
+    /* padding-left: 60px;   */
 }
 .details .min-details{
     display: flex;
@@ -41,7 +51,7 @@ img{
 }
 
 .btn {
-    background-color: #192a56;
+    background-color: #f3baf8;
     border-radius: 5px;
     color: #FFF;
     display: block;
@@ -49,8 +59,9 @@ img{
     text-align: center;
     text-decoration: none;
     text-transform: capitalize;
-    width: 100%;
-    transition: box-shadow .3s ease-in-out,
+    margin-left: 60px;
+    width: 50%;
+    transition: 
                 transform .3s ease-in-out;
 }
 

@@ -23,6 +23,7 @@ product:any
     const productId = this.route.snapshot.paramMap.get('id');
     this.http.get(`https://fakestoreapi.com/products/${productId}`)
       .subscribe(response => {
+        console.log(response  );
         this.product = response;
       });
   }

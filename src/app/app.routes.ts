@@ -8,6 +8,9 @@ import { CartComponent } from './layouts/cart/cart.component';
 import { CatagoriesComponent } from './layouts/catagories/catagories.component';
 import { MenDataComponent } from './layouts/catagories/men-data/men-data.component';
 import { ElectronicsComponent } from './layouts/catagories/electronics/electronics.component';
+import { UserListComponent } from './layouts/user-list/user-list.component';
+import { SingleUserComponent } from './layouts/single-user/single-user.component';
+
 
 export const routes: Routes = [{
     path:'',
@@ -38,9 +41,17 @@ export const routes: Routes = [{
    component:MenDataComponent
  },
 {
+   path:'users-list',
+   component:UserListComponent
+},
+{
+   path:'user/:id',
+   component:SingleUserComponent
+
+},
+{
    path:'**',
    component:ElectronicsComponent
 }
-
 
 ];
